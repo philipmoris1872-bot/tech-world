@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tech World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background: #1e1e1e; color: #f0f0f0; scroll-behavior: smooth; }
+    header { background: #0d0d0d; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+    nav a { color: #0ff; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #0f0; text-shadow: 0 0 8px #0f0; }
+    section { padding: 40px; max-width: 900px; margin: auto; }
+    h2 { color: #0ff; border-bottom: 2px solid #0ff; padding-bottom: 10px; }
+    footer { background: #0d0d0d; text-align: center; padding: 15px; }
+    .card { background: #2e2e2e; padding: 20px; margin: 20px 0; border-radius: 10px; transition: 0.3s; }
+    .card:hover { background: #3e3e3e; box-shadow: 0 0 20px #0ff; transform: scale(1.02); }
+    #techTip { background: #111; padding: 15px; margin: 20px 0; border-left: 5px solid #0ff; font-style: italic; }
+    @media (max-width: 600px){
+      nav a { display: block; margin: 10px 0; }
+      section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>💻 Tech World</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#tips">Tips</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>About</h2>
+  <p>Welcome to Tech World! Explore computers, coding, and the latest tech trends. Learn, experiment, and build your skills!</p>
+</section>
+
+<section id="projects">
+  <h2>Projects & Articles</h2>
+  <div class="card">
+    <h3>Build a Simple Website</h3>
+    <p>Learn how to create your first website using HTML, CSS, and JavaScript.</p>
+  </div>
+  <div class="card">
+    <h3>Understanding Computers</h3>
+    <p>Tips on hardware, software, and improving your PC performance.</p>
+  </div>
+  <div class="card">
+    <h3>Learn JavaScript Basics</h3>
+    <p>Interactive tutorials to get you started with coding in JS.</p>
+  </div>
+</section>
+
+<section id="tips">
+  <h2>Tech Tip of the Day</h2>
+  <div id="techTip">Loading tip...</div>
+  <script>
+    const tips = [
+      "Keep your OS and software updated to stay secure.",
+      "Use strong, unique passwords for all your accounts.",
+      "Regularly back up important files to prevent data loss.",
+      "Clean your hardware periodically to avoid overheating.",
+      "Practice coding every day to improve your skills."
+    ];
+    let tipIndex = 0;
+    function showTip(){
+      document.getElementById("techTip").textContent = tips[tipIndex];
+      tipIndex = (tipIndex + 1) % tips.length;
+    }
+    showTip();
+    setInterval(showTip, 5000);
+  </script>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Follow us on social media or email us at <a href="mailto:techworld@example.com" style="color:#0ff;">techworld@example.com</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Tech World</p>
+</footer>
+
+</body>
+</html>
